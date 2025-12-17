@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PCA適性診断｜動画編集スクール相談</title>
+  <meta name="description" content="3分であなたの状況を整理し、面談相談が必要かを提案します。" />
+  <style>
+    :root{--bg:#0b1220;--card:#111a2e;--text:#e7eaf3;--muted:#a8b0c7;--accent:#6d8cff;--ok:#22c55e;--warn:#f59e0b;--border:rgba(255,255,255,.10)}
+    body{margin:0;background:linear-gradient(180deg,#070b14,#0b1220);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif}
+    .wrap{max-width:920px;margin:0 auto;padding:20px}
+    .card{background:rgba(17,26,46,.95);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    h1{font-size:20px;margin:0 0 10px}
+    p{margin:8px 0;color:var(--muted);line-height:1.7}
+    .grid{display:grid;gap:12px}
+    @media(min-width:780px){.grid.two{grid-template-columns:1fr 1fr}}
+    .q{padding:12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03)}
+    .q h3{margin:0 0 8px;font-size:15px}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
+    button,.btn{appearance:none;border:0;border-radius:12px;padding:12px 14px;font-weight:700;cursor:pointer}
+    .yn{background:rgba(255,255,255,.08);color:var(--text);border:1px solid var(--border)}
+    .yn.active{background:rgba(109,140,255,.22);border-color:rgba(109,140,255,.7)}
+    textarea,input{width:100%;box-sizing:border-box;background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:14px;outline:none}
+    textarea{min-height:88px;resize:vertical}
+    .primary{background:linear-gradient(90deg,var(--accent),#9aaaff);color:#071022}
+    .ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800;font-size:12px}
+    .b-ok{background:rgba(34,197,94,.18);color:#c8ffd9;border:1px solid rgba(34,197,94,.35)}
+    .b-warn{background:rgba(245,158,11,.18);color:#ffe7bf;border:1px solid rgba(245,158,11,.35)}
+    .b-info{background:rgba(109,140,255,.18);color:#dfe6ff;border:1px solid rgba(109,140,255,.35)}
+    .hide{display:none}
+    .result{white-space:pre-wrap;line-height:1.75;color:var(--text)}
+    .small{font-size:12px;color:var(--muted)}
+    .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .hr{height:1px;background:var(--border);margin:14px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>動画編集スクール適性診断（PCA）</h1>
+      <p>
+        この診断は「今あなたにスクール相談が必要か」を整理するためのものです。<br>
+        診断結果によっては <b>今はPCAをおすすめしない</b> 場合もあります。
+      </p>
+
+      <div id="step1" class="grid">
+        <div class="grid two">
+          <div class="q" data-key="goal">
+            <h3>Q1. 目的は明確ですか？</h3>
+            <p class="small">副業 / 転職 / 独立のどれかが決まっている</p>
+            <div class="btns">
+              <button class="yn" data-v="yes">YES</button>
+              <button class="yn" data-v="no">NO</button>
+            </div>
+          </div>
+
+          <div class="q" data-key="time">
+            <h3>Q2. 週3時間以上は学習時間を確保できますか？</h3>
+            <div class="btns">
+              <button class="yn" data-v="yes">YES</button>
+              <button class="yn" data-v="no">NO</button>
+            </div>
+          </div>
+
+          <div class="q" data-key="tool">
+            <h3>Q3. 編集ソフトを触ったことがありますか？</h3>
+            <p class="small">CapCut / Premiere / DaVinci など</p>
+            <div class="btns">
+              <button class="yn" data-v="yes">YES</button>
+              <button class="yn" data-v="no">NO</button>
+            </div>
+          </div>
+
+          <div class="q" data-key="stuck">
+            <h3>Q4. 独学で詰まっている／続かないですか？</h3>
+            <div class="btns">
+              <button class="yn" data-v="yes">YES</button>
+              <button class="yn" data-v="no">NO</button>
+            </div>
+          </div>
+
+          <div class="q" data-key="salesfear">
+            <h3>Q5. 案件獲得・契約・お金周りが不安ですか？</h3>
+            <div class="btns">
+              <button class="yn" data-v="yes">YES</button>
+              <button class="yn" data-v="no">NO</button>
+            </div>
+          </div>
+
+          <div class="q" data-key="urgency">
+            <h3>Q6. 半年以内に成果を出したいですか？</h3>
+            <div class="btns">
+              <button class="yn" data-v="yes">YES</button>
+              <button class="yn" data-v="no">NO</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="q">
+          <h3>自由回答（AI風に要約して提案します）</h3>
+          <p class="small">※このページ内で文章を組み立てます（外部に送信しません）</p>
+
+          <label class="small">Q7. 今のスキル・経験・収入状況をざっくり</label>
+          <textarea id="free1" placeholder="例：編集は初心者。副業で月3万目標。平日30分/休日2時間…"></textarea>
+
+          <div style="height:10px"></div>
+
+          <label class="small">Q8. 一番不安・つまずいている点</label>
+          <textarea id="free2" placeholder="例：案件の取り方がわからない。単価交渉が怖い。ポートフォリオが作れない…"></textarea>
+
+          <div style="height:10px"></div>
+
+          <label class="small">Q9. 半年後の理想</label>
+          <textarea id="free3" placeholder="例：月5万円の継続案件を取って、生活費の足しにしたい…"></textarea>
+        </div>
+
+        <div class="row">
+          <button class="primary" id="toResult">診断結果を見る</button>
+          <button class="ghost" id="reset">リセット</button>
+          <span class="small">モニター価格：30万円／面談相談→納得してから購入</span>
+        </div>
+      </div>
+
+      <div id="step2" class="hide">
+        <div class="row">
+          <span id="badge" class="badge b-info">判定中</span>
+          <span class="small" id="scoreText"></span>
+        </div>
+        <div class="hr"></div>
+
+        <div class="result" id="resultText"></div>
+
+        <div class="hr"></div>
+
+        <div class="q">
+          <h3>面談予約（LINE）</h3>
+          <p class="small">
+            いきなり購入は不要です。まずは状況を整理して、必要ならモニター枠をご案内します。<br>
+            下のボタンを押すとLINEが開きます。
+          </p>
+
+          <div class="btns">
+            <a class="btn primary" id="lineBtn" href="#" target="_blank" rel="noopener">LINEで面談予約する</a>
+            <button class="btn ghost" id="back">回答を見直す</button>
+          </div>
+
+          <p class="small" style="margin-top:10px">
+            送るメッセージ例：<br>
+            「診断を見ました。面談希望です。目的：○○／不安：○○／希望日時：○○」
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // ▼▼▼ ここだけ差し替え ▼▼▼
+  const LINE_URL = "https://lin.ee/XXXXXXXX"; // 例：https://lin.ee/abcdEFG  または https://line.me/R/ti/p/~YOURID
+  // ▲▲▲ ここだけ差し替え ▲▲▲
+
+  const state = { goal:null,time:null,tool:null,stuck:null,salesfear:null,urgency:null };
+
+  // YES/NOボタン
+  document.querySelectorAll(".q[data-key] .yn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const q = btn.closest(".q");
+      const key = q.dataset.key;
+      q.querySelectorAll(".yn").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      state[key] = btn.dataset.v; // yes/no
+    });
+  });
+
+  const elStep1 = document.getElementById("step1");
+  const elStep2 = document.getElementById("step2");
+  const elResult = document.getElementById("resultText");
+  const elBadge = document.getElementById("badge");
+  const elScoreText = document.getElementById("scoreText");
+
+  document.getElementById("lineBtn").href = LINE_URL;
+
+  document.getElementById("reset").addEventListener("click", ()=>{
+    Object.keys(state).forEach(k=>state[k]=null);
+    document.querySelectorAll(".yn").forEach(b=>b.classList.remove("active"));
+    ["free1","free2","free3"].forEach(id=>document.getElementById(id).value="");
+  });
+
+  document.getElementById("back").addEventListener("click", ()=>{
+    elStep2.classList.add("hide");
+    elStep1.classList.remove("hide");
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  function scoreIt(){
+    // スコア：スクール相談の必要度（0〜12）
+    let s = 0;
+    if(state.goal==="yes") s+=2; else if(state.goal==="no") s+=0;
+    if(state.time==="yes") s+=2;
+    if(state.tool==="yes") s+=1; else s+=0;
+    if(state.stuck==="yes") s+=3;
+    if(state.salesfear==="yes") s+=3;
+    if(state.urgency==="yes") s+=1;
+    return s;
+  }
+
+  function pickLabel(score){
+    if(score >= 9) return {cls:"b-ok", txt:"面談推奨（今すぐ整理すると早い）"};
+    if(score >= 6) return {cls:"b-warn", txt:"面談おすすめ（準備しながら進める）"};
+    return {cls:"b-info", txt:"いったん独学でもOK（必要なら相談）"};
+  }
+
+  function buildResult(score){
+    const f1 = document.getElementById("free1").value.trim();
+    const f2 = document.getElementById("free2").value.trim();
+    const f3 = document.getElementById("free3").value.trim();
+
+    const goalTxt = state.goal==="yes" ? "目的がある程度明確" : "目的がまだ曖昧";
+    const timeTxt = state.time==="yes" ? "学習時間を確保できそう" : "学習時間の確保が課題";
+    const stuckTxt = state.stuck==="yes" ? "独学で詰まりやすい傾向" : "独学で進められそう";
+    const moneyTxt = state.salesfear==="yes" ? "案件獲得/契約/お金周りの不安が強い" : "お金・契約不安は小さめ";
+    const urgentTxt = state.urgency==="yes" ? "半年以内に成果を出したい" : "急ぎではない";
+
+    // “AIっぽい”文章（外部送信なし）
+    let rec = "";
+    if(score >= 9){
+      rec = `今の回答内容だと、スキル面だけでなく「仕事として成立させる部分（案件/契約/単価/継続）」の整理がボトルネックになりやすいです。
+まずは面談で状況を棚卸しして、最短ルートとリスク回避を一緒に設計するのが安全です。`;
+    } else if(score >= 6){
+      rec = `現状は独学で伸びる余地もありますが、詰まりポイントが出た時に止まりやすいパターンも見えます。
+面談で「何をいつまでに」「どこを重点強化するか」を整理してから進めると、遠回りを減らせます。`;
+    } else {
+      rec = `今の回答だけを見ると、まずは独学で基礎固めでも十分進められそうです。
+ただ、途中で「案件化」「単価」「継続」に詰まったら、早めに面談で壁打ちすると失速しにくいです。`;
+    }
+
+    const summary = [
+`【あなたの状況まとめ】
+- ${goalTxt}
+- ${timeTxt}
+- ${stuckTxt}
+- ${moneyTxt}
+- ${urgentTxt}
+
+【自由回答の要約（あなたの言葉から）】
+- 現状：${f1 || "（未入力）"}
+- 不安：${f2 || "（未入力）"}
+- 理想：${f3 || "（未入力）"}
+
+【見落としがちなポイント】
+スキルが上がっても、案件導線（提案文・実績の見せ方・条件の決め方）が弱いと「仕事にならない」状態になりやすいです。
+
+【提案】
+${rec}
+
+【次の一手】
+「購入を即決」ではなく、まずはLINE面談で整理 → 必要ならモニター枠（30万円）のご案内、が一番安全です。`
+    ].join("\n");
+
+    return summary;
+  }
+
+  document.getElementById("toResult").addEventListener("click", ()=>{
+    // 最低限：未回答が多いとアラート
+    const unanswered = Object.values(state).filter(v=>v===null).length;
+    if(unanswered >= 3){
+      alert("未回答が多いので、できればYES/NOをもう少し埋めてください（最低3つ以上回答推奨）");
+      return;
+    }
+
+    const score = scoreIt();
+    const label = pickLabel(score);
+
+    elBadge.className = "badge " + label.cls;
+    elBadge.textContent = label.txt;
+    elScoreText.textContent = `相談必要度スコア：${score} / 12`;
+
+    elResult.textContent = buildResult(score);
+
+    elStep1.classList.add("hide");
+    elStep2.classList.remove("hide");
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+</script>
+</body>
+</html>
