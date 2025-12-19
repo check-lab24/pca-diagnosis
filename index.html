@@ -3,45 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PCA適性診断｜動画編集スクール相談</title>
-  <meta name="description" content="3分であなたの状況を整理し、面談相談が必要かを提案します。" />
+  <title>動画編集適性診断｜自己チェック</title>
+  <meta name="description" content="3分で状況を整理し、次にやるべきことの方向性を確認できます。" />
   <style>
-    :root{--bg:#0b1220;--card:#111a2e;--text:#e7eaf3;--muted:#a8b0c7;--accent:#6d8cff;--ok:#22c55e;--warn:#f59e0b;--border:rgba(255,255,255,.10)}
-    body{margin:0;background:linear-gradient(180deg,#070b14,#0b1220);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif}
+    /* White base */
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --accent:#4f6cf7;
+      --ok:#16a34a;
+      --warn:#d97706;
+      --border:#e5e7eb;
+    }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif
+    }
     .wrap{max-width:920px;margin:0 auto;padding:20px}
-    .card{background:rgba(17,26,46,.95);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08)
+    }
     h1{font-size:20px;margin:0 0 10px}
     p{margin:8px 0;color:var(--muted);line-height:1.7}
     .grid{display:grid;gap:12px}
     @media(min-width:780px){.grid.two{grid-template-columns:1fr 1fr}}
-    .q{padding:12px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03)}
-    .q h3{margin:0 0 8px;font-size:15px}
+    .q{padding:12px;border:1px solid var(--border);border-radius:14px;background:rgba(79,108,247,.04)}
+    .q h3{margin:0 0 8px;font-size:15px;color:var(--text)}
     .btns{display:flex;gap:10px;flex-wrap:wrap}
     button,.btn{appearance:none;border:0;border-radius:12px;padding:12px 14px;font-weight:700;cursor:pointer}
-    .yn{background:rgba(255,255,255,.08);color:var(--text);border:1px solid var(--border)}
-    .yn.active{background:rgba(109,140,255,.22);border-color:rgba(109,140,255,.7)}
-    textarea,input{width:100%;box-sizing:border-box;background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:14px;outline:none}
+    .yn{background:#fff;color:var(--text);border:1px solid var(--border)}
+    .yn.active{background:rgba(79,108,247,.14);border-color:rgba(79,108,247,.55)}
+    textarea,input{width:100%;box-sizing:border-box;background:#fff;color:var(--text);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:14px;outline:none}
     textarea{min-height:88px;resize:vertical}
-    .primary{background:linear-gradient(90deg,var(--accent),#9aaaff);color:#071022}
+    .primary{background:linear-gradient(90deg,var(--accent),#7d93ff);color:#ffffff}
     .ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
     .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800;font-size:12px}
-    .b-ok{background:rgba(34,197,94,.18);color:#c8ffd9;border:1px solid rgba(34,197,94,.35)}
-    .b-warn{background:rgba(245,158,11,.18);color:#ffe7bf;border:1px solid rgba(245,158,11,.35)}
-    .b-info{background:rgba(109,140,255,.18);color:#dfe6ff;border:1px solid rgba(109,140,255,.35)}
+    .b-ok{background:rgba(22,163,74,.12);color:#0f5132;border:1px solid rgba(22,163,74,.25)}
+    .b-warn{background:rgba(217,119,6,.12);color:#7a3e00;border:1px solid rgba(217,119,6,.25)}
+    .b-info{background:rgba(79,108,247,.10);color:#22306b;border:1px solid rgba(79,108,247,.22)}
     .hide{display:none}
     .result{white-space:pre-wrap;line-height:1.75;color:var(--text)}
     .small{font-size:12px;color:var(--muted)}
     .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
     .hr{height:1px;background:var(--border);margin:14px 0}
+    a{color:inherit}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>動画編集スクール適性診断（PCA）</h1>
+      <h1>動画編集適性診断</h1>
       <p>
-        この診断は「今あなたにスクール相談が必要か」を整理するためのものです。<br>
-        診断結果によっては <b>今はPCAをおすすめしない</b> 場合もあります。
+        この診断は「今あなたに動画編集が必要か」を整理するためのものです。<br>
+        診断結果によってはおすすめしない場合もあります。
       </p>
 
       <div id="step1" class="grid">
@@ -98,8 +120,7 @@
         </div>
 
         <div class="q">
-          <h3>自由回答（AI風に要約して提案します）</h3>
-          <p class="small">※このページ内で文章を組み立てます（外部に送信しません）</p>
+          <h3>自由回答</h3>
 
           <label class="small">Q7. 今のスキル・経験・収入状況をざっくり</label>
           <textarea id="free1" placeholder="例：編集は初心者。副業で月3万目標。平日30分/休日2時間…"></textarea>
@@ -118,7 +139,6 @@
         <div class="row">
           <button class="primary" id="toResult">診断結果を見る</button>
           <button class="ghost" id="reset">リセット</button>
-          <span class="small">モニター価格：30万円／面談相談→納得してから購入</span>
         </div>
       </div>
 
@@ -134,20 +154,20 @@
         <div class="hr"></div>
 
         <div class="q">
-          <h3>面談予約（LINE）</h3>
+          <h3>個別相談（LINE）</h3>
           <p class="small">
-            いきなり購入は不要です。まずは状況を整理して、必要ならモニター枠をご案内します。<br>
+            必要な場合のみ、状況整理のお手伝いをします。<br>
             下のボタンを押すとLINEが開きます。
           </p>
 
           <div class="btns">
-            <a class="btn primary" id="lineBtn" href="#" target="_blank" rel="noopener">LINEで面談予約する</a>
+            <a class="btn primary" id="lineBtn" href="#" target="_blank" rel="noopener">LINEで相談する</a>
             <button class="btn ghost" id="back">回答を見直す</button>
           </div>
 
           <p class="small" style="margin-top:10px">
             送るメッセージ例：<br>
-            「診断を見ました。面談希望です。目的：○○／不安：○○／希望日時：○○」
+            「診断を見ました。相談希望です。目的：○○／不安：○○／希望日時：○○」
           </p>
         </div>
       </div>
@@ -156,7 +176,7 @@
 
 <script>
   // ▼▼▼ ここだけ差し替え ▼▼▼
-  const LINE_URL = "https://lin.ee/XXXXXXXX"; // 例：https://lin.ee/abcdEFG  または https://line.me/R/ti/p/~YOURID
+  const LINE_URL = "https://lin.ee/3ioAMfT";
   // ▲▲▲ ここだけ差し替え ▲▲▲
 
   const state = { goal:null,time:null,tool:null,stuck:null,salesfear:null,urgency:null };
@@ -193,7 +213,7 @@
   });
 
   function scoreIt(){
-    // スコア：スクール相談の必要度（0〜12）
+    // スコア：相談の必要度（0〜12）
     let s = 0;
     if(state.goal==="yes") s+=2; else if(state.goal==="no") s+=0;
     if(state.time==="yes") s+=2;
@@ -205,8 +225,8 @@
   }
 
   function pickLabel(score){
-    if(score >= 9) return {cls:"b-ok", txt:"面談推奨（今すぐ整理すると早い）"};
-    if(score >= 6) return {cls:"b-warn", txt:"面談おすすめ（準備しながら進める）"};
+    if(score >= 9) return {cls:"b-ok", txt:"相談推奨（整理すると早い）"};
+    if(score >= 6) return {cls:"b-warn", txt:"相談おすすめ（準備しながら進める）"};
     return {cls:"b-info", txt:"いったん独学でもOK（必要なら相談）"};
   }
 
@@ -221,17 +241,16 @@
     const moneyTxt = state.salesfear==="yes" ? "案件獲得/契約/お金周りの不安が強い" : "お金・契約不安は小さめ";
     const urgentTxt = state.urgency==="yes" ? "半年以内に成果を出したい" : "急ぎではない";
 
-    // “AIっぽい”文章（外部送信なし）
     let rec = "";
     if(score >= 9){
       rec = `今の回答内容だと、スキル面だけでなく「仕事として成立させる部分（案件/契約/単価/継続）」の整理がボトルネックになりやすいです。
-まずは面談で状況を棚卸しして、最短ルートとリスク回避を一緒に設計するのが安全です。`;
+必要なら個別相談で状況を棚卸しして、最短ルートとリスク回避の観点で一緒に設計すると進めやすいです。`;
     } else if(score >= 6){
       rec = `現状は独学で伸びる余地もありますが、詰まりポイントが出た時に止まりやすいパターンも見えます。
-面談で「何をいつまでに」「どこを重点強化するか」を整理してから進めると、遠回りを減らせます。`;
+個別相談で「何をいつまでに」「どこを重点強化するか」を整理してから進めると、遠回りを減らせます。`;
     } else {
       rec = `今の回答だけを見ると、まずは独学で基礎固めでも十分進められそうです。
-ただ、途中で「案件化」「単価」「継続」に詰まったら、早めに面談で壁打ちすると失速しにくいです。`;
+ただ、途中で「案件化」「単価」「継続」に詰まったら、早めに相談で壁打ちすると失速しにくいです。`;
     }
 
     const summary = [
@@ -242,7 +261,7 @@
 - ${moneyTxt}
 - ${urgentTxt}
 
-【自由回答の要約（あなたの言葉から）】
+【自由回答の要約】
 - 現状：${f1 || "（未入力）"}
 - 不安：${f2 || "（未入力）"}
 - 理想：${f3 || "（未入力）"}
@@ -254,14 +273,13 @@
 ${rec}
 
 【次の一手】
-「購入を即決」ではなく、まずはLINE面談で整理 → 必要ならモニター枠（30万円）のご案内、が一番安全です。`
+まずは独学で進める／必要ならLINEで相談、のどちらでもOKです。`
     ].join("\n");
 
     return summary;
   }
 
   document.getElementById("toResult").addEventListener("click", ()=>{
-    // 最低限：未回答が多いとアラート
     const unanswered = Object.values(state).filter(v=>v===null).length;
     if(unanswered >= 3){
       alert("未回答が多いので、できればYES/NOをもう少し埋めてください（最低3つ以上回答推奨）");
